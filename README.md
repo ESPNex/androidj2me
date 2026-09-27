@@ -5,6 +5,7 @@
 - `DalvikE63/`: sorgenti Symbian/C99, build riproducibili, APK e JAR precedenti, test e note architetturali. Leggere `DalvikE63/docs/aosp42_vm_jni_binder_status.md`.
 - `NokiaE63_MIDP/`: porting precedente e asset, preservati; i tool JAR di terze parti non sono caricati.
 - `progetto_originale/`: sorgenti Java ME originali e relative risorse.
+- `Android_J2ME_E63.jad` e `Android_J2ME_E63.jar`: distribuzione J2ME originale abbinata (JAD 3.461.012 byte), conservata senza modifiche.
 - `DalvikE63/release/`: precedenti SISX/JAR 0.2 e altri file storici, non sovrascritti.
 - [Release sperimentale v0.6-preview](https://github.com/ESPNex/androidj2me/releases/tag/v0.6-preview): SISX rigenerato e firmato con certificato locale **come asset separato**, troppo grande per lo snapshot workspace. Leggere `DalvikE63/release/experiments/LEGGIMI-JNI-BINDER-PREVIEW.md` prima di usare il file.
 
