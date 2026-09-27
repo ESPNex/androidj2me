@@ -1,0 +1,6 @@
+#ifndef E63OS_COMMANDS_HRH
+#define E63OS_COMMANDS_HRH
+/* Local prototype command IDs; the native CBA is hidden behind guest UI. */
+#define EE63SoftkeyBack 0x7001
+#define EE63SoftkeySelect 0x7002
+#endif

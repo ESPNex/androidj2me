@@ -1,0 +1,30 @@
+// Independent S60 3rd FP1 Java-APK DEX interpreter prototype, not old UI.
+TARGET          e63android.exe
+TARGETTYPE      exe
+UID             0x100039CE 0xE0B63E04
+SECUREID        0xE0B63E04
+EPOCSTACKSIZE   0x10000
+EPOCHEAPSIZE    0x100000 0x1000000
+CAPABILITY      NONE
+SOURCEPATH      .
+SOURCE          e63android_app.cpp e63_file_services.cpp e63_system_store.cpp
+SOURCE          e63_boot_store.cpp e63_ui_store.cpp e63_binder_port.cpp
+SOURCEPATH      ../runtime
+SOURCE          dex_preflight.c apk_dex_loader.c apk_java_vm.c apk_activity_vm.c
+SOURCE          boot_classpath.c boot_method.c aosp_object_vm.c
+SOURCE          jni_bridge.c binder_ipc.c
+SOURCE          ui_apk_archive.c ui_manifest_axml.c
+SOURCE          apk_sha256.c apk_java_runtime.c apk_android_bridge.c
+SOURCE          apk_image_pack.c vfs_mount.c system_image.c
+SOURCEPATH      .
+START RESOURCE  e63android.rss
+HEADER
+TARGETPATH      \resource\apps
+END
+START RESOURCE  e63android_reg.rss
+TARGETPATH      \private\10003a3f\import\apps
+END
+USERINCLUDE     . ../runtime ../compat
+SYSTEMINCLUDE   \epoc32\include \epoc32\include\libc
+LIBRARY         euser.lib apparc.lib cone.lib eikcore.lib avkon.lib
+LIBRARY         efsrv.lib fbscli.lib bitgdi.lib estlib.lib eikcoctl.lib

@@ -1,0 +1,142 @@
+[
+  {
+    "name": "FileManager.apk",
+    "package": "org.e63.dalvik.files",
+    "entry": "org.e63.dalvik.files.Main",
+    "class": "Lorg/e63/dalvik/files/Program;",
+    "system": false,
+    "dex_sha256": "8d844a88a9f9d717934828f1ed62466fc010d6a9bd873aed091dcc88455aadb1",
+    "assets": {
+      "files.png": {
+        "size": 1798,
+        "sha256": "3d4740962be99408847bf422f6025e178ccf2a2ec3297c249f0934af82029d33"
+      },
+      "lowbattery.wav": {
+        "size": 21164,
+        "sha256": "181d5389739ff6b65905c2a2d37f03aa666c7cea2b5584cfb323f08ad6d71ecc"
+      },
+      "music.wav": {
+        "size": 3344684,
+        "sha256": "8b42286d5357de06c8f60cd8611230264ef9aecec99ad1ac40f445549e139815"
+      }
+    },
+    "java_sources": {
+      "android_java/src/org/e63/dalvik/files/Main.java": "93e28d3b02f71e3e8efa1a1e61e200bc2dfe7484ba1461def65ec0f5b1e4e41c",
+      "android_java/src/org/e63/dalvik/files/Program.java": "b83bc668561f5503b107cdb037f1da4f8f78f535a160e602b9613e2fec8ad469",
+      "android_java/src/org/e63/dalvik/runtime/GuestActivity.java": "5cfe39eb1dd4817b485d7e2ce54e7d31356752603ce82c9c80ff6499784f31f7",
+      "android_java/src/org/e63/dalvik/runtime/Host.java": "f346d8b4d181a9f8af81999b5c5d5969244618be47c4001924add853f109b985"
+    }
+  },
+  {
+    "name": "Settings.apk",
+    "package": "org.e63.dalvik.settings",
+    "entry": "org.e63.dalvik.settings.Main",
+    "class": "Lorg/e63/dalvik/settings/Program;",
+    "system": true,
+    "dex_sha256": "4b9064c51929284926783546b699c203f9e96363a6447259ce1a5fd8afd73214",
+    "assets": {
+      "settings.png": {
+        "size": 1874,
+        "sha256": "0e715fd899d29140bf8d2b86453c97d511f139c134b574115a8fd26f0695e99a"
+      }
+    },
+    "java_sources": {
+      "android_java/src/org/e63/dalvik/runtime/GuestActivity.java": "5cfe39eb1dd4817b485d7e2ce54e7d31356752603ce82c9c80ff6499784f31f7",
+      "android_java/src/org/e63/dalvik/runtime/Host.java": "f346d8b4d181a9f8af81999b5c5d5969244618be47c4001924add853f109b985",
+      "android_java/src/org/e63/dalvik/settings/Main.java": "212cf441ac73c5cdccea68bb882f32dd936970c593978d203f714b6e18bbba7b",
+      "android_java/src/org/e63/dalvik/settings/Program.java": "b035a3d4710aa1441dc9c01f9d13e2254fff1b8aa57b19c513817cb0670896c0"
+    }
+  },
+  {
+    "name": "Store.apk",
+    "package": "org.e63.dalvik.store",
+    "entry": "org.e63.dalvik.store.Main",
+    "class": "Lorg/e63/dalvik/store/Program;",
+    "system": true,
+    "dex_sha256": "13b6a53b35d4a1cf53a118de4b434342924d202f414e80b74502383dbd928871",
+    "assets": {
+      "banner.png": {
+        "size": 29414,
+        "sha256": "5b71e02c81b01d7c8c00685b49dbaffb6b8bfd6c3d18bf86761fc9ffa3ce347d"
+      },
+      "store.png": {
+        "size": 1724,
+        "sha256": "f258324a2eb7b90f420a79bab3aa841d67048511bdd0d73d7e6ba38c12c05427"
+      }
+    },
+    "java_sources": {
+      "android_java/src/org/e63/dalvik/runtime/GuestActivity.java": "5cfe39eb1dd4817b485d7e2ce54e7d31356752603ce82c9c80ff6499784f31f7",
+      "android_java/src/org/e63/dalvik/runtime/Host.java": "f346d8b4d181a9f8af81999b5c5d5969244618be47c4001924add853f109b985",
+      "android_java/src/org/e63/dalvik/store/Main.java": "15310cc6731ec9f9d4bcb9585edff4911f161ab7a696762767dde7756b32920e",
+      "android_java/src/org/e63/dalvik/store/Program.java": "4523e2c601934d81ac8112baf3202ee19538d1ca41d2c1f6ba326d9e3a9ebc7a"
+    }
+  },
+  {
+    "name": "SystemUI.apk",
+    "package": "org.e63.dalvik.systemui",
+    "entry": "org.e63.dalvik.systemui.Main",
+    "class": "Lorg/e63/dalvik/systemui/Program;",
+    "system": true,
+    "dex_sha256": "254bd2b2a3658574cef95149b03587ba3612cbe3ff209ffd523b816847cd0f68",
+    "assets": {
+      "lowbattery.wav": {
+        "size": 21164,
+        "sha256": "181d5389739ff6b65905c2a2d37f03aa666c7cea2b5584cfb323f08ad6d71ecc"
+      },
+      "warning.png": {
+        "size": 2845,
+        "sha256": "c1496539564dd071145656e6e9e6a27ae9a8be3f39b7d19986dbd60e994fd404"
+      }
+    },
+    "java_sources": {
+      "android_java/src/org/e63/dalvik/runtime/GuestActivity.java": "5cfe39eb1dd4817b485d7e2ce54e7d31356752603ce82c9c80ff6499784f31f7",
+      "android_java/src/org/e63/dalvik/runtime/Host.java": "f346d8b4d181a9f8af81999b5c5d5969244618be47c4001924add853f109b985",
+      "android_java/src/org/e63/dalvik/systemui/Main.java": "958039e220184c012b72151233d5f4b0895d8dba8351f67caa1809a86b737a00",
+      "android_java/src/org/e63/dalvik/systemui/Program.java": "fbdd810c0e43f99e1d6c33bd2a88a0c1b78bd824c7342a09e187f6baf6e93b61"
+    }
+  },
+  {
+    "name": "Launcher.apk",
+    "package": "org.e63.dalvik.launcher",
+    "entry": "org.e63.dalvik.launcher.Main",
+    "class": "Lorg/e63/dalvik/launcher/Program;",
+    "system": true,
+    "dex_sha256": "3a8b377b75d1fc65d09fcb9b2d94a503145a7cbbca724062304b978dcb55e591",
+    "assets": {
+      "wall.png": {
+        "size": 50850,
+        "sha256": "cea1ff6eee78c83f714dbf1c0c7cda73d1745329c122106e0e3c755dd5c7ac69"
+      }
+    },
+    "java_sources": {
+      "android_java/src/org/e63/dalvik/launcher/Main.java": "e2f0012120ab591e6bfb45e09660fc783a0b2a44fba5ff069bbc7651b8276c40",
+      "android_java/src/org/e63/dalvik/launcher/Program.java": "6f6317a67e8ccc7daffed568cc51ed72bc7c46964be9abc451707c8839e3a248",
+      "android_java/src/org/e63/dalvik/runtime/GuestActivity.java": "5cfe39eb1dd4817b485d7e2ce54e7d31356752603ce82c9c80ff6499784f31f7",
+      "android_java/src/org/e63/dalvik/runtime/Host.java": "f346d8b4d181a9f8af81999b5c5d5969244618be47c4001924add853f109b985"
+    }
+  },
+  {
+    "name": "PackageInstaller.apk",
+    "package": "org.e63.dalvik.packageinstaller",
+    "entry": "org.e63.dalvik.packageinstaller.Main",
+    "class": "Lorg/e63/dalvik/packageinstaller/Program;",
+    "system": true,
+    "dex_sha256": "75020bc5c14eac459fed542c2763275d5903bf93ad8035824387b3fc89600421",
+    "assets": {
+      "files.png": {
+        "size": 1798,
+        "sha256": "3d4740962be99408847bf422f6025e178ccf2a2ec3297c249f0934af82029d33"
+      },
+      "packages/FileManager.apk": {
+        "size": 3389527,
+        "sha256": "00e0cbbd5e1759f5ee2f5e121db0314549b133a399a96db5f748c161cb2ca2d8"
+      }
+    },
+    "java_sources": {
+      "android_java/src/org/e63/dalvik/packageinstaller/Main.java": "6cd0342a3f432a60dc4d644c0768d9f37e8866c5404909a8064b30d37ad02416",
+      "android_java/src/org/e63/dalvik/packageinstaller/Program.java": "414265a665a94f36326239e9a71d4eeea1f2786667bcb64c1e302b101705c1e0",
+      "android_java/src/org/e63/dalvik/runtime/GuestActivity.java": "5cfe39eb1dd4817b485d7e2ce54e7d31356752603ce82c9c80ff6499784f31f7",
+      "android_java/src/org/e63/dalvik/runtime/Host.java": "f346d8b4d181a9f8af81999b5c5d5969244618be47c4001924add853f109b985"
+    }
+  }
+]

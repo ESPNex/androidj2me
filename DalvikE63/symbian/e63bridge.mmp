@@ -1,0 +1,9 @@
+TARGET          e63bridge.exe
+TARGETTYPE      exe
+UID             0x1000007a 0xE0B63E01
+CAPABILITY      NetworkServices
+SOURCEPATH      .
+SOURCE          e63bridge.cpp bridge_protocol.c
+SYSTEMINCLUDE   \epoc32\include
+USERINCLUDE     .
+LIBRARY         euser.lib esock.lib insock.lib

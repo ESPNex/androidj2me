@@ -1,0 +1,12 @@
+#include <appinfo.rh>
+#include <e63android.rsg>
+UID2 KUidAppRegistrationResourceFile
+UID3 0xE0B63E04
+RESOURCE APP_REGISTRATION_INFO
+    {
+    app_file="e63android";
+    localisable_resource_file="\\resource\\apps\\e63android";
+    localisable_resource_id=R_E63ANDROID_LOCALISABLE_APP_INFO;
+    embeddability=KAppNotEmbeddable;
+    newfile=KAppDoesNotSupportNewFile;
+    }

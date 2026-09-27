@@ -1,0 +1,5 @@
+#ifndef E63_ANDROID_COMMANDS_HRH
+#define E63_ANDROID_COMMANDS_HRH
+#define EE63JavaBack 0x7011
+#define EE63JavaSelect 0x7012
+#endif

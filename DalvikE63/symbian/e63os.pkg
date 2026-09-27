@@ -1,0 +1,15 @@
+; Real S60 FP1 project; Home/Fn shortcuts of 0.2.1 observed on E63.
+; The 0.2.2 softkey and D-pad changes still need a new E63 test.
+; The DEX is an unchanged copy of the classes.dex within Launcher.apk.
+; Asset/font resource pack is generated from that APK by make_symbian_assets.py.
+# {"E63 J2ME DEX UI"}, (0xE0B63E02), 0, 2, 2
+% {"IT"}
+: "Local prototype"
+; E63 is S60 3rd Ed FP1 / Symbian 9.2. Without a platform dependency
+; the Symbian installer warns "Application not compatible with phone".
+[0x102032BE], 0, 0, 0, {"SymbianProductID"}
+"$(EPOCROOT)epoc32\release\gcce\urel\e63os.exe" - "!:\sys\bin\e63os.exe"
+"$(EPOCROOT)epoc32\data\z\resource\apps\e63os.rsc" - "!:\resource\apps\e63os.rsc"
+"$(EPOCROOT)epoc32\data\z\private\10003a3f\import\apps\e63os_reg.rsc" - "!:\private\10003a3f\import\apps\e63os_reg.rsc"
+"../j2me/classes.dex" - "C:\private\E0B63E02\classes.dex"
+"resources/e63assets.bin" - "C:\private\E0B63E02\e63assets.bin"

@@ -1,0 +1,27 @@
+// Minimal S60 resource: the original J2ME DEX paints status and nav itself.
+NAME E63O
+#include <eikon.rh>
+#include <avkon.rh>
+#include <avkon.rsg>
+#include <appinfo.rh>
+#include "e63os_commands.hrh"
+RESOURCE RSS_SIGNATURE {}
+RESOURCE TBUF r_default_document_name { buf="E63 UI"; }
+RESOURCE CBA r_e63_guest_softkeys
+    {
+    buttons=
+        {
+        CBA_BUTTON { id=EE63SoftkeyBack; txt="Back"; },
+        CBA_BUTTON { id=EE63SoftkeySelect; txt="Select"; }
+        };
+    }
+RESOURCE EIK_APP_INFO { cba=r_e63_guest_softkeys; }
+RESOURCE LOCALISABLE_APP_INFO r_e63os_localisable_app_info
+    {
+    short_caption="E63 UI";
+    caption_and_icon=CAPTION_AND_ICON_INFO
+        {
+        caption="Android J2ME UI";
+        number_of_icons=0;
+        };
+    }

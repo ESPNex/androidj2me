@@ -1,0 +1,28 @@
+{
+  "scope": "Host tests of genuine compiled AOSP DEX; NOT a system image, Nokia runtime or substitute for signed APK verification",
+  "tag": "android-4.2.2_r1.2",
+  "files": {
+    "core": {
+      "origin": "Android 4.2.2_r1.2 locally built core.jar/classes.dex",
+      "sha256": "1e3520a2c654e24a76abd538114fdc9df0615b075d564da1350a8443dffeb822",
+      "bytes": 2741228,
+      "fixture": "core.classes.dex.zlib",
+      "compressed_bytes": 1176390
+    },
+    "framework": {
+      "origin": "Android 4.2.2_r1.2 locally built framework.jar/classes.dex",
+      "sha256": "263398413560d8e22fb29521e9da680c9879a2040332a06e1c0eb6e7f9d988c1",
+      "bytes": 8511588,
+      "fixture": "framework.classes.dex.zlib",
+      "compressed_bytes": 3542876
+    },
+    "Launcher2": {
+      "origin": "Android 4.2.2_r1.2 locally built AOSP shared-test-key signed Launcher2.apk/classes.dex",
+      "sha256": "2966e3d9f6c69e53694637cadfdad4dc49afae8b7a9e4a1ed2e9d100a2975f1e",
+      "bytes": 942792,
+      "apk_sha256": "79dd2e1ab0391d64589dd4caa9689db5d4a95ace4e058b0a890d0a0dc3c803ad",
+      "fixture": "Launcher2.classes.dex.zlib",
+      "compressed_bytes": 416205
+    }
+  }
+}

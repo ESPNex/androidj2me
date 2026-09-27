@@ -1,0 +1,18 @@
+// Separate AppArc launcher: starts the restricted console PING bridge.
+TARGET          e63bridge_launch.exe
+TARGETTYPE      exe
+UID             0x100039CE 0xE0B63E03
+SECUREID        0xE0B63E03
+CAPABILITY      NONE
+SOURCEPATH      .
+SOURCE          e63bridge_launch.cpp
+START RESOURCE  e63bridge_launch.rss
+HEADER
+TARGETPATH      \resource\apps
+END
+START RESOURCE  e63bridge_launch_reg.rss
+TARGETPATH      \private\10003a3f\import\apps
+END
+SYSTEMINCLUDE   \epoc32\include
+LIBRARY         euser.lib apparc.lib cone.lib eikcore.lib avkon.lib
+LIBRARY         eikcoctl.lib

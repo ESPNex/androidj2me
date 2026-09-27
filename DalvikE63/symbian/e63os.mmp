@@ -1,0 +1,24 @@
+// E63/S60 3rd FP1 (Symbian 9.2), GCCE: guest DEX UI plus native framebuffer.
+TARGET          e63os.exe
+TARGETTYPE      exe
+UID             0x100039CE 0xE0B63E02
+SECUREID        0xE0B63E02
+EPOCSTACKSIZE   0x10000
+EPOCHEAPSIZE    0x100000 0x1000000
+CAPABILITY      NONE
+SOURCEPATH      .
+SOURCE          e63os_app.cpp
+SOURCEPATH      runtime
+SOURCE          dex_preflight.c ui_event_vm.c rgb565_painter.c
+SOURCEPATH      .
+START RESOURCE  e63os.rss
+HEADER
+TARGETPATH      \resource\apps
+END
+START RESOURCE  e63os_reg.rss
+TARGETPATH      \private\10003a3f\import\apps
+END
+USERINCLUDE     . runtime compat
+SYSTEMINCLUDE   \epoc32\include \epoc32\include\libc
+LIBRARY         euser.lib apparc.lib cone.lib eikcore.lib avkon.lib
+LIBRARY         efsrv.lib fbscli.lib bitgdi.lib estlib.lib eikcoctl.lib

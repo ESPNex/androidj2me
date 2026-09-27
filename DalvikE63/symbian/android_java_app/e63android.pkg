@@ -1,0 +1,19 @@
+; WORK IN PROGRESS after the preserved 0.2 SISX; NOT an Android 4.2 release.
+; Guest /system/app is read-only, backed by persistent C: private storage.
+; THIS dev package still omits the candidate AOSP boot JARs; use the separate
+; unreleased e63android-aosp42-diagnostic.pkg for the 32-payload DEX probe.
+; Changes to this package do not alter the already released 0.1/0.2 SISX.
+# {"E63 Java Activity DEX"}, (0xE0B63E04), 0, 2, 0
+% {"IT"}
+: "Local test build"
+[0x102032BE], 0, 0, 0, {"SymbianProductID"}
+"$(EPOCROOT)epoc32\release\gcce\urel\e63android.exe" - "!:\sys\bin\e63android.exe"
+"$(EPOCROOT)epoc32\data\z\resource\apps\e63android.rsc" - "!:\resource\apps\e63android.rsc"
+"$(EPOCROOT)epoc32\data\z\private\10003a3f\import\apps\e63android_reg.rsc" - "!:\private\10003a3f\import\apps\e63android_reg.rsc"
+"../../apks_android/Launcher.apk" - "C:\private\E0B63E04\system\app\Launcher.apk"
+"../../apks_android/Settings.apk" - "C:\private\E0B63E04\system\app\Settings.apk"
+"../../apks_android/Store.apk" - "C:\private\E0B63E04\system\app\Store.apk"
+"../../apks_android/SystemUI.apk" - "C:\private\E0B63E04\system\app\SystemUI.apk"
+"../../apks_android/PackageInstaller.apk" - "C:\private\E0B63E04\system\app\PackageInstaller.apk"
+"../../apks_android/FileManager.apk" - "C:\private\E0B63E04\system\app\FileManager.apk"
+"images565.bin" - "C:\private\E0B63E04\images565.bin"

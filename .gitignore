@@ -1,0 +1,11 @@
+# Licensed Nokia SDK and volatile AOSP builds never belong to Git
+**/build/
+**/toolchains/
+NokiaE63_MIDP/toolchain/
+**/__pycache__/
+**/.venv/
+**/node_modules/
+*.pem
+*.key
+*.p12
+*.pyc

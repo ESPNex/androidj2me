@@ -1,0 +1,9 @@
+MIDlet-Name: Android J2ME Edition
+MIDlet-Version: 1.2.1
+MIDlet-Vendor: Utente
+MIDlet-1: Android J2ME Edition, /icon.png, android.j2me.edition.E63Midlet
+MIDlet-Permissions-Opt: javax.microedition.io.Connector.socket
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Profile: MIDP-2.0
+MIDlet-Jar-URL: Android_J2ME_E63_Bridge.jar
+MIDlet-Jar-Size: 3470271

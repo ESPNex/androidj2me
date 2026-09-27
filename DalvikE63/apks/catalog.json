@@ -1,0 +1,94 @@
+[
+  {
+    "name": "Launcher.apk",
+    "package": "org.e63.dalvik.launcher",
+    "class": "Lorg/e63/dalvik/launcher/Main;",
+    "entry": "android.j2me.edition.E63Midlet",
+    "system": true,
+    "j2me_dex_sha256": "2083e67bf18c5efe5bc74053f24ec11cbb11d7d0ba5482bc2d3f9d70689a58ff",
+    "j2me_classes": 9,
+    "j2me_methods": 118,
+    "adapter_sha256": "c24a9c447032dba2aa2ac28b0508c1e5c191eb29abfdf0fccde3d74b50797878",
+    "methods": [
+      "onSelect(I)V",
+      "onStart()V"
+    ]
+  },
+  {
+    "name": "Settings.apk",
+    "package": "org.e63.dalvik.settings",
+    "class": "Lorg/e63/dalvik/settings/Main;",
+    "entry": "org.e63.dalvik.settings.Main",
+    "system": true,
+    "j2me_dex_sha256": "2083e67bf18c5efe5bc74053f24ec11cbb11d7d0ba5482bc2d3f9d70689a58ff",
+    "j2me_classes": 9,
+    "j2me_methods": 118,
+    "adapter_sha256": "beba533d27e05b8943f0476579103caf6c60393320fc873978775f96b9e6a7d6",
+    "methods": [
+      "onSelect(I)V",
+      "onStart()V"
+    ]
+  },
+  {
+    "name": "Store.apk",
+    "package": "org.e63.dalvik.store",
+    "class": "Lorg/e63/dalvik/store/Main;",
+    "entry": "org.e63.dalvik.store.Main",
+    "system": true,
+    "j2me_dex_sha256": "2083e67bf18c5efe5bc74053f24ec11cbb11d7d0ba5482bc2d3f9d70689a58ff",
+    "j2me_classes": 9,
+    "j2me_methods": 118,
+    "adapter_sha256": "072d7e56629f637e19b387fbfc2067ea3f7f15d92bb195e104c28a92b89f1759",
+    "methods": [
+      "onCommand(ILjava/lang/String;Ljava/lang/String;)V",
+      "onSelect(I)V",
+      "onStart()V"
+    ]
+  },
+  {
+    "name": "SystemUI.apk",
+    "package": "org.e63.dalvik.systemui",
+    "class": "Lorg/e63/dalvik/systemui/Main;",
+    "entry": "org.e63.dalvik.systemui.Main",
+    "system": true,
+    "j2me_dex_sha256": "2083e67bf18c5efe5bc74053f24ec11cbb11d7d0ba5482bc2d3f9d70689a58ff",
+    "j2me_classes": 9,
+    "j2me_methods": 118,
+    "adapter_sha256": "17d40f2210040044a171f5dacfcd89135cc48fff62db378657050a7d3c44c9a4",
+    "methods": [
+      "onSelect(I)V",
+      "onStart()V"
+    ]
+  },
+  {
+    "name": "PackageInstaller.apk",
+    "package": "org.e63.dalvik.packageinstaller",
+    "class": "Lorg/e63/dalvik/packageinstaller/Main;",
+    "entry": "org.e63.dalvik.packageinstaller.Main",
+    "system": true,
+    "j2me_dex_sha256": "2083e67bf18c5efe5bc74053f24ec11cbb11d7d0ba5482bc2d3f9d70689a58ff",
+    "j2me_classes": 9,
+    "j2me_methods": 118,
+    "adapter_sha256": "b3d94ac854ffbc99b7b9c1ca528ea3ca9cc46610a1725e5a3d912b9e2222f9f0",
+    "methods": [
+      "onSelect(I)V",
+      "onStart()V"
+    ]
+  },
+  {
+    "name": "FileManager.apk",
+    "package": "org.e63.dalvik.files",
+    "class": "Lorg/e63/dalvik/files/Main;",
+    "entry": "org.e63.dalvik.files.Main",
+    "system": false,
+    "j2me_dex_sha256": "2083e67bf18c5efe5bc74053f24ec11cbb11d7d0ba5482bc2d3f9d70689a58ff",
+    "j2me_classes": 9,
+    "j2me_methods": 118,
+    "adapter_sha256": "e00b045113cdf98a9972521e687affc4b6b9eb02fb270efdacc63d64645eacd6",
+    "methods": [
+      "onCommand(ILjava/lang/String;Ljava/lang/String;)V",
+      "onSelect(I)V",
+      "onStart()V"
+    ]
+  }
+]

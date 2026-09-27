@@ -1,0 +1,27 @@
+// Native host renders rows from the guest Activity/Main/Program DEX.
+NAME E63A
+#include <eikon.rh>
+#include <avkon.rh>
+#include <avkon.rsg>
+#include <appinfo.rh>
+#include "e63android_commands.hrh"
+RESOURCE RSS_SIGNATURE {}
+RESOURCE TBUF r_default_document_name { buf="Java DEX E63"; }
+RESOURCE CBA r_e63_java_softkeys
+    {
+    buttons=
+        {
+        CBA_BUTTON { id=EE63JavaBack; txt="Back"; },
+        CBA_BUTTON { id=EE63JavaSelect; txt="Select"; }
+        };
+    }
+RESOURCE EIK_APP_INFO { cba=r_e63_java_softkeys; }
+RESOURCE LOCALISABLE_APP_INFO r_e63android_localisable_app_info
+    {
+    short_caption="AOSP DEX";
+    caption_and_icon=CAPTION_AND_ICON_INFO
+        {
+        caption="AOSP DEX Diagnostic";
+        number_of_icons=0;
+        };
+    }

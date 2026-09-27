@@ -1,0 +1,54 @@
+; UNRELEASED LOCAL UI DEX DIAGNOSTIC, NOT AN ANDROID PHONE.
+; Four real AOSP-sourced UI APKs signed by PUBLIC development keys.
+; Launcher2 classes may be verified; no Activity/JNI/Binder/UI execution.
+; Contains the old 6 APKs unchanged; simulated SystemUI stays old.
+; Same Nokia app UID as 0.2: BACK UP device before any opt-in install.
+; Requires ample free space on Nokia C:; NO hardware run inferred.
+; UNRELEASED LOCAL DIAGNOSTIC — NOT AN ANDROID 4.2 PHONE.
+; All 10 AOSP boot DEX JARs + resources; key 0 probes only Color.argb.
+; Android Activity/JNI/Binder are ABSENT; old 0.2 files unchanged.
+; Same UID as 0.2 test app: do not install without phone backup.
+# {"AOSP 4.2 UI DEX Diagnostic (no Activities)"}, (0xE0B63E04), 0, 4, 0
+% {"IT"}
+: "Local test build"
+[0x102032BE], 0, 0, 0, {"SymbianProductID"}
+"$(EPOCROOT)epoc32\release\gcce\urel\e63android.exe" - "!:\sys\bin\e63android.exe"
+"$(EPOCROOT)epoc32\data\z\resource\apps\e63android.rsc" - "!:\resource\apps\e63android.rsc"
+"$(EPOCROOT)epoc32\data\z\private\10003a3f\import\apps\e63android_reg.rsc" - "!:\private\10003a3f\import\apps\e63android_reg.rsc"
+"../../apks_android/Launcher.apk" - "C:\private\E0B63E04\system\app\Launcher.apk"
+"../../apks_android/Settings.apk" - "C:\private\E0B63E04\system\app\Settings.apk"
+"../../apks_android/Store.apk" - "C:\private\E0B63E04\system\app\Store.apk"
+"../../apks_android/SystemUI.apk" - "C:\private\E0B63E04\system\app\SystemUI.apk"
+"../../apks_android/PackageInstaller.apk" - "C:\private\E0B63E04\system\app\PackageInstaller.apk"
+"../../apks_android/FileManager.apk" - "C:\private\E0B63E04\system\app\FileManager.apk"
+"images565.bin" - "C:\private\E0B63E04\images565.bin"
+"../../build/staged-android42-system/framework/core.jar" - "C:\private\E0B63E04\system\framework\core.jar"
+"../../build/staged-android42-system/framework/core-junit.jar" - "C:\private\E0B63E04\system\framework\core-junit.jar"
+"../../build/staged-android42-system/framework/bouncycastle.jar" - "C:\private\E0B63E04\system\framework\bouncycastle.jar"
+"../../build/staged-android42-system/framework/ext.jar" - "C:\private\E0B63E04\system\framework\ext.jar"
+"../../build/staged-android42-system/framework/framework.jar" - "C:\private\E0B63E04\system\framework\framework.jar"
+"../../build/staged-android42-system/framework/telephony-common.jar" - "C:\private\E0B63E04\system\framework\telephony-common.jar"
+"../../build/staged-android42-system/framework/mms-common.jar" - "C:\private\E0B63E04\system\framework\mms-common.jar"
+"../../build/staged-android42-system/framework/android.policy.jar" - "C:\private\E0B63E04\system\framework\android.policy.jar"
+"../../build/staged-android42-system/framework/services.jar" - "C:\private\E0B63E04\system\framework\services.jar"
+"../../build/staged-android42-system/framework/apache-xml.jar" - "C:\private\E0B63E04\system\framework\apache-xml.jar"
+"../../build/staged-android42-system/framework/framework-res.apk" - "C:\private\E0B63E04\system\framework\framework-res.apk"
+"../../build/staged-android42-system/bootdex/core.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\core.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/core-junit.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\core-junit.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/bouncycastle.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\bouncycastle.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/ext.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\ext.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/framework.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\framework.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/telephony-common.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\telephony-common.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/mms-common.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\mms-common.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/android.policy.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\android.policy.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/services.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\services.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/apache-xml.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\apache-xml.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/boot-classes.idx" - "C:\private\E0B63E04\data\e63-bootdex\boot-classes.idx"
+"../../build/staged-android42-system/ui-app/Launcher2.apk" - "C:\private\E0B63E04\system\app\Launcher2.apk"
+"../../build/staged-android42-system/ui-index/Launcher2.idx" - "C:\private\E0B63E04\data\e63-uiindex\Launcher2.idx"
+"../../build/staged-android42-system/ui-app/AOSP42Settings.apk" - "C:\private\E0B63E04\system\app\AOSP42Settings.apk"
+"../../build/staged-android42-system/ui-index/Settings.idx" - "C:\private\E0B63E04\data\e63-uiindex\Settings.idx"
+"../../build/staged-android42-system/ui-app/AOSP42PackageInstaller.apk" - "C:\private\E0B63E04\system\app\AOSP42PackageInstaller.apk"
+"../../build/staged-android42-system/ui-index/PackageInstaller.idx" - "C:\private\E0B63E04\data\e63-uiindex\PackageInstaller.idx"
+"../../build/staged-android42-system/ui-app/AOSP42SystemUI.apk" - "C:\private\E0B63E04\system\app\AOSP42SystemUI.apk"
+"../../build/staged-android42-system/ui-index/SystemUI.idx" - "C:\private\E0B63E04\data\e63-uiindex\SystemUI.idx"
