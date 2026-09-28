@@ -250,6 +250,13 @@ public:
         /* Deliberately separate diagnostic: 0 runs real pinned AOSP Color
          * bytecode, NEVER substitutes for a missing Android Activity. */
         if (key=='0') { ProbeAospDex();return EKeyWasConsumed; }
+#ifdef E63_CORE_PREVIEW
+        /* Optional UI modules are deliberately absent from the small base.
+         * Do not pretend Launcher2, its manifest or Java Views are running. */
+        if ((key>='1' && key<='2') || (key>='4' && key<='9') || key=='#')
+            {strcpy(iNote,"AOSP UI module absent; NO Activity");
+             DrawNow();return EKeyWasConsumed;}
+#endif
         /* Typed (int, null ComponentName) constructor; genuine model data,
          * no AppWidgetHost, Widget View or Android UI is started. */
         if (key=='1') { ProbeAospWidgetModel();return EKeyWasConsumed; }
@@ -656,18 +663,28 @@ private:
         {
         iScreen=new (ELeave) E63AndroidScreen;
         Mem::FillZ(iScreen,sizeof(*iScreen));
+#ifndef E63_CORE_PREVIEW
         ReadImagesL(); // SHA-256 of offline PNG->RGB565 pack, fail closed
         iFilesEnabled=E63FileServices::EnabledL();
+#endif
         /* Launch a broker thread, NOT a disk-mapped /dev/binder node.
          * Failure is visible via B; it cannot turn into a fake service. */
         iBinder.Start();
         CreateWindowL();
         SetRect(TRect(TPoint(0,0),TSize(320,240)));
         ActivateL();
+#ifdef E63_CORE_PREVIEW
+        /* The modular base has NO legacy APK/bitmap or Android UI payloads.
+         * A real Activity dispatcher is missing: keep the failure explicit
+         * instead of opening a legacy shim or pretending a Launcher exists. */
+        strcpy(iNote,"Android Activity assente; core DEX/JNI/IPC");
+        DrawNow();
+#else
         /* Primitive AOSP bytecode can run in a separate diagnostic, but
          * Activity lifecycle execution is still absent. Fail visibly. */
         TRAPD(bootError,OpenL(PKG_HOME,EFalse));
         Report(bootError);
+#endif
         }
     static TInt Device(void* aContext,E63JavaService aService,
                        const E63JavaValue* aArgs,unsigned aCount,
@@ -921,6 +938,14 @@ private:
         if (iScreen && !iScreen->row_count)
             {
             gc.SetPenColor(TRgb(235,235,235));
+#ifdef E63_CORE_PREVIEW
+            gc.DrawText(_L("E63 AOSP core: experimental"),TPoint(11,87));
+            gc.DrawText(_L("Android Activity: non avviabile"),TPoint(11,123));
+            gc.DrawText(_L("0 Color  3 Point  * JNI  B IPC"),
+                        TPoint(11,153));
+            gc.DrawText(_L("UI/resources: moduli non installati"),
+                        TPoint(11,182));
+#else
             gc.DrawText(_L("AOSP 4.2 DEX diagnostic"),TPoint(11,87));
             gc.DrawText(_L("Activity Android: non avviabile"),TPoint(11,123));
             gc.DrawText(_L("0 Color 1 Widget 2 Folder 3 Point"),
@@ -928,6 +953,7 @@ private:
             gc.DrawText(_L("4 HOME 5 Helper 6 Item 7 Drag"),TPoint(11,173));
             gc.DrawText(_L("8 App 9 Shortcut # Layout * JNI; NO UI"),
                         TPoint(11,198));
+#endif
             }
         if (iScreen) for (TInt row=iTopRow;row<iTopRow+6 &&
                           row<static_cast<TInt>(iScreen->row_count);++row)

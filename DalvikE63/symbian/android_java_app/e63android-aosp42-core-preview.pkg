@@ -1,0 +1,35 @@
+; EXPERIMENTAL MODULAR CORE: not a booted Android system.
+; ONLY genuine AOSP 4.2 boot JARs + pinned DEX/index and
+; native Symbian DEX/JNI/Binder broker. No old shim APK,
+; framework-res, Launcher2, Settings or SystemUI in base.
+; C: contains guest /system (read-only) and /data;
+; /dev/binder is a virtual IPC endpoint, not disk storage.
+; SAME SID as Java 0.2/v0.6; backup before installing.
+# {"E63 AOSP Core DEX JNI Binder (no Android UI)"}, (0xE0B63E04), 0, 7, 0
+% {"IT"}
+: "Local test build"
+[0x102032BE], 0, 0, 0, {"SymbianProductID"}
+"$(EPOCROOT)epoc32\release\gcce\urel\e63android.exe" - "!:\sys\bin\e63android.exe"
+"$(EPOCROOT)epoc32\data\z\resource\apps\e63android.rsc" - "!:\resource\apps\e63android.rsc"
+"$(EPOCROOT)epoc32\data\z\private\10003a3f\import\apps\e63android_reg.rsc" - "!:\private\10003a3f\import\apps\e63android_reg.rsc"
+"../../build/staged-android42-system/framework/core.jar" - "C:\private\E0B63E04\system\framework\core.jar"
+"../../build/staged-android42-system/framework/core-junit.jar" - "C:\private\E0B63E04\system\framework\core-junit.jar"
+"../../build/staged-android42-system/framework/bouncycastle.jar" - "C:\private\E0B63E04\system\framework\bouncycastle.jar"
+"../../build/staged-android42-system/framework/ext.jar" - "C:\private\E0B63E04\system\framework\ext.jar"
+"../../build/staged-android42-system/framework/framework.jar" - "C:\private\E0B63E04\system\framework\framework.jar"
+"../../build/staged-android42-system/framework/telephony-common.jar" - "C:\private\E0B63E04\system\framework\telephony-common.jar"
+"../../build/staged-android42-system/framework/mms-common.jar" - "C:\private\E0B63E04\system\framework\mms-common.jar"
+"../../build/staged-android42-system/framework/android.policy.jar" - "C:\private\E0B63E04\system\framework\android.policy.jar"
+"../../build/staged-android42-system/framework/services.jar" - "C:\private\E0B63E04\system\framework\services.jar"
+"../../build/staged-android42-system/framework/apache-xml.jar" - "C:\private\E0B63E04\system\framework\apache-xml.jar"
+"../../build/staged-android42-system/bootdex/core.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\core.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/core-junit.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\core-junit.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/bouncycastle.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\bouncycastle.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/ext.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\ext.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/framework.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\framework.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/telephony-common.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\telephony-common.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/mms-common.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\mms-common.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/android.policy.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\android.policy.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/services.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\services.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/apache-xml.jar.classes.dex" - "C:\private\E0B63E04\data\e63-bootdex\apache-xml.jar.classes.dex"
+"../../build/staged-android42-system/bootdex/boot-classes.idx" - "C:\private\E0B63E04\data\e63-bootdex\boot-classes.idx"

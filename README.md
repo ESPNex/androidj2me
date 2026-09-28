@@ -7,6 +7,7 @@
 - `progetto_originale/`: sorgenti Java ME originali e relative risorse.
 - `Android_J2ME_E63.jad` e `Android_J2ME_E63.jar`: distribuzione J2ME originale abbinata (JAD 3.461.012 byte), conservata senza modifiche.
 - `DalvikE63/release/`: precedenti SISX/JAR 0.2 e altri file storici, non sovrascritti.
+- [Base E63 modulare v0.7-core-preview](https://github.com/ESPNex/androidj2me/releases/tag/v0.7-core-preview): SISX **16.220.160 byte** (<20 MB), SHA-256 `2207f1cd2d1678d2047cae8a51b66f48342e856d703490768f81ae99caf31706`, 24 payload e circa 30 MB installati. Solo codice DEX AOSP autentico/diagnostica JNI-Binder; **non ha ancora APK UI o un Android avviabile**. Leggere [avvertenze, limiti e backup](DalvikE63/release/experiments/LEGGIMI-E63-CORE-SOTTO20MB.md).
 - [Release sperimentale v0.6-preview](https://github.com/ESPNex/androidj2me/releases/tag/v0.6-preview): SISX rigenerato e firmato con certificato locale **come asset separato**, troppo grande per lo snapshot workspace. Leggere `DalvikE63/release/experiments/LEGGIMI-JNI-BINDER-PREVIEW.md` prima di usare il file.
 
 I sorgenti AOSP autorizzati sono acquisiti tramite gli script con tag/commit fissati sotto `DalvikE63/build/` escluso; non è un checkout AOSP completo. Anche lo SDK Nokia FP1 richiede licenza e installazione locale; **non viene redistribuito**. Il vecchio installer Windows originale rimane nel workspace dell'autore e non è caricato su questo repository pubblico.

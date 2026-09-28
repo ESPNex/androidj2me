@@ -6,7 +6,9 @@ Validates exact EXE/resources/MIDP or six Android Java APKs; in the separate
 resources, ten extracted DEX files and class index against the C pin headers.
 A SEPARATE 40-payload UI diagnostic checks four signed APKs and indexes;
 two distinct 44-payload AXML/object diagnostics and a separate JNI/Binder
-preview check four manifest caches. None is an E63/Android hardware test.
+preview check four manifest caches. The distinct 24-payload modular core
+has authentic boot JARs/DEX but no legacy or AOSP UI APKs. None is an E63/
+Android hardware test.
 Checks S60 FP1 prerequisites, NOT the cryptographic SIS signature or E63 run.
 """
 from __future__ import annotations
@@ -88,9 +90,10 @@ def unpack_compressed(blob: bytes, limit: int = MAX_PAYLOAD) -> bytes:
 def extract(sisx: Path, diagnostic: bool = False,
             ui_diagnostic: bool = False,
             axml_diagnostic: bool = False,
-            object_diagnostic: bool = False) -> list[bytes]:
+            object_diagnostic: bool = False,
+            core_preview: bool = False) -> list[bytes]:
     raw = sisx.read_bytes()
-    if ui_diagnostic or axml_diagnostic or object_diagnostic:
+    if ui_diagnostic or axml_diagnostic or object_diagnostic or core_preview:
         diagnostic = True
     limit = MAX_DIAGNOSTIC_SIS if diagnostic else MAX_SIS
     if not (16 < len(raw) <= limit):
@@ -103,7 +106,8 @@ def extract(sisx: Path, diagnostic: bool = False,
     if len(units) != 1:
         raise ValueError("expected one SIS data unit")
     file_data = list(array_items(one_field(units[0], 2), 32))
-    counts = (44,) if axml_diagnostic or object_diagnostic else \
+    counts = (24,) if core_preview else \
+             (44,) if axml_diagnostic or object_diagnostic else \
              (40,) if ui_diagnostic else (32,) if diagnostic else (4, 5, 10)
     if len(file_data) not in counts:
         raise ValueError("unexpected number of packaged files")
@@ -143,6 +147,7 @@ def platform_ids(sisx: Path, diagnostic: bool = False) -> list[int]:
 
 
 def verify(app: str, sisx: Path, sdk: Path):
+    core_preview = app == "e63android-core-preview"
     ui_diagnostic = app == "e63android-ui-diagnostic"
     axml_diagnostic = app in ("e63android-ui-axml-diagnostic",
                               "e63android-jni-binder-preview")
@@ -151,21 +156,24 @@ def verify(app: str, sisx: Path, sdk: Path):
                          "e63android-ui-diagnostic",
                          "e63android-ui-axml-diagnostic",
                          "e63android-object-diagnostic",
-                         "e63android-jni-binder-preview")
+                         "e63android-jni-binder-preview",
+                         "e63android-core-preview")
     ids = platform_ids(sisx, diagnostic=diagnostic)
     if ids != [0x102032BE]:
         raise ValueError(f"missing unique E63 S60 3rd FP1 dependency: got {ids!r}")
     files = extract(sisx, diagnostic=diagnostic,
                     ui_diagnostic=ui_diagnostic,
                     axml_diagnostic=axml_diagnostic,
-                    object_diagnostic=object_diagnostic)
+                    object_diagnostic=object_diagnostic,
+                    core_preview=core_preview)
     base = sdk / "epoc32"
     exe = base / "release/gcce/urel" / (
         "e63android.exe" if diagnostic else f"{app}.exe")
-    if ui_diagnostic or axml_diagnostic or object_diagnostic:
+    if ui_diagnostic or axml_diagnostic or object_diagnostic or core_preview:
         # Independently built candidates must each retain their OWN EXE:
         # GnuPoc overwrites the SDK's single e63android.exe on every build.
-        saved = ("aosp42-object-diagnostic" if object_diagnostic else
+        saved = ("aosp42-e63-core-preview" if core_preview else
+                 "aosp42-object-diagnostic" if object_diagnostic else
                  "aosp42-jni-binder-preview" if app==
                       "e63android-jni-binder-preview" else
                  "aosp42-ui-axml-diagnostic" if axml_diagnostic else
@@ -183,6 +191,18 @@ def verify(app: str, sisx: Path, sdk: Path):
         expected.extend([base / "release/gcce/urel/e63bridge_launch.exe",
                          base / "data/z/resource/apps/e63bridge_launch.rsc",
                          base / "data/z/private/10003a3f/import/apps/e63bridge_launch_reg.rsc"])
+    elif core_preview:
+        expected.extend([base / "data/z/resource/apps/e63android.rsc",
+                         base / "data/z/private/10003a3f/import/apps/e63android_reg.rsc"])
+        # The modular base omits ALL legacy app/bitmap and real AOSP UI APK
+        # payloads, as well as framework-res.apk. No shim is substituted.
+        from tools.stage_android42_runtime import BOOT_ORDER, FILES
+        staged = ROOT / "build/staged-android42-system"
+        expected.extend(staged / "framework" / name for name, _, kind in FILES
+                        if kind == 2)
+        expected.extend(staged / "bootdex" / name
+                        for name in (*[p + ".classes.dex" for p in BOOT_ORDER],
+                                     "boot-classes.idx"))
     elif app in ("e63android", "e63android-diagnostic",
                  "e63android-ui-diagnostic",
                  "e63android-ui-axml-diagnostic",
@@ -231,7 +251,9 @@ if __name__ == "__main__":
                                       "e63android-diagnostic",
                                       "e63android-ui-diagnostic",
                                       "e63android-ui-axml-diagnostic",
-                                      "e63android-object-diagnostic"))
+                                      "e63android-object-diagnostic",
+                                      "e63android-jni-binder-preview",
+                                      "e63android-core-preview"))
     cli.add_argument("sisx", type=Path)
     cli.add_argument("--sdk", type=Path,
                      default=Path(os.environ.get("EPOCROOT", "")))
