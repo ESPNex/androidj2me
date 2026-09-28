@@ -11,4 +11,4 @@
 
 I sorgenti AOSP autorizzati sono acquisiti tramite gli script con tag/commit fissati sotto `DalvikE63/build/` escluso; non è un checkout AOSP completo. Anche lo SDK Nokia FP1 richiede licenza e installazione locale; **non viene redistribuito**. Il vecchio installer Windows originale rimane nel workspace dell'autore e non è caricato su questo repository pubblico.
 
-Verifica di sviluppo: `python3 -m unittest discover -s tests -p 'test_*.py' -q` nella cartella `DalvikE63/`: 153 test, 1 saltato. La compilazione GCCE e la verifica strutturale del SISX non sostituiscono un test sul telefono fisico.
+Verifica di sviluppo: `python3 -m unittest discover -s tests -p 'test_*.py' -q` nella cartella `DalvikE63/`: 143 test, 3 saltati con `build/` assente (153 test, 1 saltato nella verifica precedente dopo bootstrap AOSP/SDK). La compilazione GCCE e la verifica strutturale del SISX non sostituiscono un test sul telefono fisico.
